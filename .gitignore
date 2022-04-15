@@ -1,0 +1,6 @@
+.env
+/feeds/*
+log.txt
+url-error-log.txt
+/build/*
+feed.xml

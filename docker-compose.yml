@@ -1,0 +1,30 @@
+version: '3'
+
+networks:
+  waseka-xml-generator:
+
+services:
+  # nginx:
+  #   image: nginx:stable-alpine
+  #   container_name: golang_nginx
+  #   # ports: 
+  #   #   - "6000:80"
+  #   volumes:
+  #     # - ./app:/var/www/html
+  #     - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+  #   depends_on:
+  #     - golang
+  #   networks:
+  #     - waseka-xml-generator
+
+  golang:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: golang
+    volumes: 
+      - ./:/opt/app/api
+    # ports:
+    #   - "5000:5000"
+    networks:
+      - waseka-xml-generator
